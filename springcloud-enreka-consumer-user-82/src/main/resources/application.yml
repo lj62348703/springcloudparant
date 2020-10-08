@@ -1,0 +1,22 @@
+server:
+  port: 82
+
+spring:
+  application:
+    name: eureka-consumer
+
+eureka:
+  hostname: 127.0.0.1
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    statusPageUrl: http://${eureka.hostname}:${server.port}/actuator/info
+
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8081/eureka/,http://127.0.0.1:8082/eureka/,http://127.0.0.1:8083/eureka/
+    fetch-registry: true
+
+info:
+  app:
+    name: ${spring.application.name}:${server.port}
+    author: consumer

@@ -1,0 +1,16 @@
+server:
+  port: 8082
+#配置服务的名字
+spring:
+  application:
+    name: eureka-server
+#自己注册自己
+eureka:
+  client:
+    registerWithEureka: false #是否要注册到其他Server上   registerWithEureka等同于register_with_eureka
+    fetchRegistry: false  #是否需要拉取服务信息       fetchRegistry等同于 fetch-registry
+    service-url:
+      defaultZone: http://localhost:8081/eureka,http://localhost:8082/eureka,http://localhost:8083/eureka
+  server:  #配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
+    enable-self-preservation: true # 设为false，关闭自我保护
+    eviction-interval-timer-in-ms: 5000 # 清理间隔（单位毫秒，默认是60*1000）启用主动失效，并且每次主动失效检测间隔为3s

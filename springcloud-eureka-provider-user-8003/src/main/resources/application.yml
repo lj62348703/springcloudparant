@@ -1,0 +1,39 @@
+server:
+  port: 8003
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zmn?characterEncoding=utf-8
+    username: root
+    password: root
+  application:
+    name: eureka-provider
+
+eureka:
+  hostname: 127.0.0.1
+  instance:
+    lease-renewal-interval-in-seconds: 4
+    lease-expiration-duration-in-seconds: 12
+    instance-id: ${spring.application.name}:${server.port}
+    statusPageUrl: http://${eureka.hostname}:${server.port}/actuator/info
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8081/eureka/,http://127.0.0.1:8082/eureka/,http://127.0.0.1:8083/eureka/
+    fetch-registry: true
+    registry-fetch-interval-seconds: 8
+
+info:
+  app:
+    name: ${spring.application.name}:${server.port}
+    author: provider
+#用来暴露endpoints的，由于endpoints中会包含很多敏感信息，
+#除了health和info两个支持直接访问外，其他的默认不能直接访问，
+#所以我们让他们都能访问(*)，或者指定springboot的监控端点访问权限，
+#*表示所有的端点都允许访问，如果只写hystrix.stream，他会把默认的info,health端点关闭
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["info","health","hystrix.stream"]

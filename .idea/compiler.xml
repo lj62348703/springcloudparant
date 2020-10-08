@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloudgateway8094" />
+        <module name="springcloudgateway8093" />
+        <module name="springcloudzuul8092" />
+        <module name="springcloudeurekaserver3" />
+        <module name="springcloudeurekaserver2" />
+        <module name="springcloudeurekaserver" />
+        <module name="springcloudenrekaconsumeruser83" />
+        <module name="springcloudenrekaconsumeruser82" />
+        <module name="springcloudprovideruser8001" />
+        <module name="springcloudfeign84" />
+        <module name="springcloudconsumeruser81" />
+        <module name="springzuul8091" />
+        <module name="springzuul8090" />
+        <module name="springcloudeurekaprovideruser8003" />
+        <module name="springcloudeurekaprovideruser8002" />
+        <module name="springcloudapi" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springcloudapi" options="-parameters" />
+      <module name="springcloudconsumeruser81" options="-parameters" />
+      <module name="springcloudenrekaconsumeruser82" options="-parameters" />
+      <module name="springcloudenrekaconsumeruser83" options="-parameters" />
+      <module name="springcloudeurekaprovideruser8002" options="-parameters" />
+      <module name="springcloudeurekaprovideruser8003" options="-parameters" />
+      <module name="springcloudeurekaserver" options="-parameters" />
+      <module name="springcloudeurekaserver2" options="-parameters" />
+      <module name="springcloudeurekaserver3" options="-parameters" />
+      <module name="springcloudfeign84" options="-parameters" />
+      <module name="springcloudgateway8093" options="-parameters" />
+      <module name="springcloudgateway8094" options="-parameters" />
+      <module name="springcloudprovideruser8001" options="-parameters" />
+      <module name="springcloudzuul8092" options="-parameters" />
+      <module name="springzuul8090" options="-parameters" />
+      <module name="springzuul8091" options="-parameters" />
+    </option>
+  </component>
+</project>
